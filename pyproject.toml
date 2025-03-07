@@ -1,0 +1,29 @@
+[project]
+name = "catering-service"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "alembic>=1.14.1",
+    "dotenv>=0.9.9",
+    "flask>=3.1.0",
+    "sqlalchemy>=2.0.38",
+]
+
+
+[tool.ruff]
+show-fixes = true
+line-length = 100
+fix = true 
+
+[tool.ruff.format]
+exclude = [".venv", "migrations"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.4",
+    "ruff>=0.9.3",
+]
