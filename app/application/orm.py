@@ -1,4 +1,6 @@
+from datetime import datetime
 from uuid import UUID, uuid4
+from sqlalchemy import func
 from sqlalchemy.orm import DeclarativeBase, mapped_column, Mapped
 
 
@@ -12,8 +14,9 @@ class Base(DeclarativeBase):
 
 class DefaultBase(Base):
     __abstract__ = True
-    id: Mapped[int] = mapped_column(primary_key=True)
-    uuid: Mapped[UUID] = mapped_column(default_factory=generate_string_uuid, unique=True)
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    uuid: Mapped[UUID] = mapped_column(default=generate_string_uuid, unique=True)
+    created_at: Mapped[datetime] = mapped_column(default=func.now)
 
 
 class Category(DefaultBase):

@@ -10,4 +10,4 @@ BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
 
 # load_dotenv(f"{BASE_DIR}/envs/.{args.env}.env")
 load_dotenv(f"{BASE_DIR}/envs/.dev.env")
-database_uri = os.getenv("database_uri", "sqlite:///database.db")
+database_uri = os.getenv("database_uri", "sqlite:///database.sqlite3")
