@@ -14,3 +14,4 @@ wheels/
 
 # Other
 sandbox.py
+migrations/
