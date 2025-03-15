@@ -81,7 +81,8 @@ class OrderPoint(DefaultBase):
     room_id: Mapped[int] = mapped_column(ForeignKey("room.id"))
     room: Mapped[Room] = relationship(back_populates="order_points")
 
+
 class Operator(DefaultBase):
-    __tablename__="operator"
+    __tablename__ = "operator"
     name: Mapped[str]
     menu_id: Mapped[int] = mapped_column(ForeignKey("category.id"))
